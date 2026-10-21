@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@layer base {
+  :root {
+    --background: 220 20% 97%;
+    --foreground: 220 25% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 10%;
+
+    --primary: 215 80% 48%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 15% 92%;
+    --secondary-foreground: 220 25% 20%;
+
+    --muted: 220 15% 95%;
+    --muted-foreground: 220 10% 45%;
+
+    --accent: 160 60% 42%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 88%;
+    --input: 220 15% 88%;
+    --ring: 215 80% 48%;
+
+    --radius: 0.625rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+    --success: 160 60% 42%;
+    --success-foreground: 0 0% 100%;
+    --info: 215 80% 48%;
+    --info-foreground: 0 0% 100%;
+
+    --waste-low: 160 60% 42%;
+    --waste-medium: 38 92% 50%;
+    --waste-high: 0 72% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer components {
+  .stat-card {
+    @apply rounded-xl border bg-card p-5 shadow-sm transition-all duration-200 hover:shadow-md;
+  }
+
+  .bar-visualization {
+    @apply relative h-10 rounded-lg overflow-hidden bg-muted border flex flex-row;
+  }
+
+  .bar-piece {
+    @apply h-full transition-all duration-300 flex-none;
+  }
+
+  .file-dropzone {
+    @apply border-2 border-dashed rounded-xl p-10 text-center transition-all duration-200 cursor-pointer;
+    @apply border-muted-foreground/30 hover:border-primary/50 hover:bg-primary/5;
+  }
+
+  .file-dropzone.active {
+    @apply border-primary bg-primary/10;
+  }
+}
